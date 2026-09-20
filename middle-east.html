@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>الشرق الأوسط | SKY WEBS NEWS</title>
+
+<link rel="stylesheet" href="style.css">
+<style>
+     .logo img {
+    width: 220px;
+    height: 70px;
+    object-fit: contain;
+}
+</style>
+</head>
+
+
+<body class="middle-east-section">
+
+
+
+<header>
+<div class="logo">
+    <img src="1.png" alt="">
+</div>
+
+<div class="brand">
+
+
+<h1 class="logo">
+SKY WEBS NEWS
+</h1>
+</div>
+
+
+
+
+
+<nav>
+
+
+<a href="index.html">
+الرئيسية
+</a>
+
+
+<a href="world.html">
+العالم
+</a>
+
+
+<a href="ai.html">
+التكنولوجيا
+</a>
+
+
+<a href="economy.html">
+اقتصاد
+</a>
+
+
+<a href="sports.html">
+رياضة
+</a>
+
+
+</nav>
+
+
+</header>
+
+
+
+
+
+
+
+
+
+<section class="hero">
+
+
+<div class="hero-content">
+
+
+<h1>
+
+أخبار
+<span>
+الشرق الأوسط
+</span>
+
+</h1>
+
+
+
+<p>
+
+تغطية شاملة للأحداث السياسية
+والاقتصادية والاجتماعية في المنطقة.
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="news">
+
+
+<div class="section-title">
+
+
+<h2>
+
+آخر أخبار
+<span>
+الشرق الأوسط
+</span>
+
+</h2>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="news-grid">
+
+
+
+
+
+
+
+<article class="news-card">
+
+
+<img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620"
+alt="الشرق الأوسط">
+
+
+<div class="news-content">
+
+
+<h3>
+
+تطورات جديدة في المنطقة
+
+</h3>
+
+
+<p>
+
+متابعة مستمرة لأهم الأحداث
+والتطورات السياسية.
+
+</p>
+
+
+
+<a href="#" class="read-more">
+
+قراءة المزيد
+
+</a>
+
+
+</div>
+
+
+</article>
+
+
+
+
+
+
+
+
+
+<article class="news-card">
+
+
+<img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2"
+alt="المدن العربية">
+
+
+<div class="news-content">
+
+
+<h3>
+
+مشاريع تنموية واقتصادية جديدة
+
+</h3>
+
+
+<p>
+
+دول المنطقة تطلق مشاريع
+لتطوير الاقتصاد والبنية التحتية.
+
+</p>
+
+
+
+<a href="#" class="read-more">
+
+قراءة المزيد
+
+</a>
+
+
+</div>
+
+
+</article>
+
+
+
+
+
+
+
+
+
+<article class="news-card">
+
+
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+alt="الأخبار الدولية">
+
+
+<div class="news-content">
+
+
+<h3>
+
+تعاون إقليمي في مجالات التقنية
+
+</h3>
+
+
+<p>
+
+توسع الشراكات في التكنولوجيا
+والابتكار الرقمي.
+
+</p>
+
+
+
+<a href="#" class="read-more">
+
+قراءة المزيد
+
+</a>
+
+
+</div>
+
+
+</article>
+
+
+
+<article class="news-card">
+
+
+<img src="4.webp"
+alt="الأخبار الدولية">
+
+
+<div class="news-content">
+
+
+<h3>
+المعركة القادمة مأرب.. حشد حوثي ضخم وتأهب للقوات الحكومية
+</h3>
+<a href="#" class="read-more">
+
+قراءة المزيد
+
+</a>
+
+
+</div>
+
+
+</article>
+
+
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<footer>
+
+
+<div class="copyright">
+
+© 2026 SKY WEBS NEWS
+
+</div>
+<p> الوقت الحالي بGMT+1</p>
+<div id="date-time"></div>
+
+<style>
+  #date-time {
+    font-size: 18px;
+    font-weight: bold;
+    direction: rtl;
+    text-align: center;
+    padding: 10px;
+    color: #1565c0;
+  }
+</style>
+
+<script>
+function updateDateTime() {
+  const now = new Date();
+
+  const options = {
+    timeZone: "Africa/Algiers",
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  };
+
+  const date = new Intl.DateTimeFormat("ar-DZ", options).format(now);
+
+  const time = new Intl.DateTimeFormat("ar-DZ", {
+    timeZone: "Africa/Algiers",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  }).format(now);
+
+  document.getElementById("date-time").textContent =
+    date + " — " + time;
+}
+
+updateDateTime();
+setInterval(updateDateTime, 1000);
+</script>
+
+</footer>
+
+
+
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+
+</html>

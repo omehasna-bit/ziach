@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News - أخبار الذكاء الاصطناعي</title>
+
+    <style>
+        .logo img{
+            width: 220px;
+    height: 100;
+    object-fit: contain;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        .botton{
+         background: #6366F1;
+         color: white;
+        }
+        body {
+             background: #0F172A;
+             color: #F8FAFC;
+            font-family: Tahoma, Arial, sans-serif;
+            background: #f7f8fc;
+            color: #171725;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+        header {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: 800;
+            color: #635bff;
+        }
+
+        .logo img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        .logo-fallback {
+            display: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: #635bff;
+            color: #fff;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            font-weight: 600;
+            color: #454557;
+            transition: .25s;
+        }
+
+        .nav-links a:hover {
+            color: #635bff;
+        }
+
+        .nav-btn {
+            background: #635bff;
+            color: #fff !important;
+            padding: 11px 20px;
+            border-radius: 12px;
+        }
+
+        .nav-btn:hover {
+            background: #5149e8;
+        }
+
+        .hero {
+            padding: 80px 0;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(99,91,255,.12), transparent 30%),
+                radial-gradient(circle at 90% 70%, rgba(0,194,255,.10), transparent 28%),
+                #fff;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #eeedff;
+            color: #635bff;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 68px);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: #635bff;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 0 auto 30px;
+            color: #666679;
+            font-size: 18px;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .hero-features div {
+            background: #fff;
+            border: 1px solid #e8e8f0;
+            padding: 10px 16px;
+            border-radius: 12px;
+            font-size: 14px;
+            box-shadow: 0 5px 18px rgba(20,20,50,.05);
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            padding: 13px 24px;
+            border-radius: 12px;
+            font-weight: 700;
+            transition: .25s;
+        }
+
+        .primary-btn {
+            background: #635bff;
+            color: #fff;
+        }
+
+        .primary-btn:hover {
+            background: #5149e8;
+            transform: translateY(-2px);
+        }
+
+        .secondary-btn {
+            background: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+        }
+
+        .secondary-btn:hover {
+            border-color: #635bff;
+            color: #635bff;
+        }
+
+        .categories-section {
+            padding: 55px 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #777;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .category-btn {
+            border: 1px solid #ddd;
+            background: #fff;
+            color: #555;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 14px;
+            transition: .25s;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: #635bff;
+            border-color: #635bff;
+            color: #fff;
+        }
+
+        .featured-section {
+            padding: 55px 0;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 22px;
+        }
+
+        .featured-main {
+            position: relative;
+            min-height: 430px;
+            overflow: hidden;
+            border-radius: 22px;
+            background: #111;
+            cursor: pointer;
+        }
+
+        .featured-main img {
+            width: 100%;
+            height: 100%;
+            min-height: 430px;
+            object-fit: cover;
+            opacity: .82;
+            transition: .4s;
+        }
+
+        .featured-main:hover img {
+            transform: scale(1.04);
+        }
+
+        .featured-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            background: linear-gradient(
+                to top,
+                rgba(0,0,0,.82),
+                rgba(0,0,0,.05)
+            );
+            color: #fff;
+        }
+
+        .featured-content {
+            max-width: 720px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #635bff;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+
+        .featured-content h3 {
+            font-size: 30px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .featured-content p {
+            color: #ddd;
+        }
+
+        .featured-mini {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .mini-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #ececf2;
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            transition: .3s;
+            cursor: pointer;
+        }
+
+        .mini-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(30,30,60,.08);
+        }
+
+        .mini-card img {
+            width: 150px;
+            height: 100%;
+            min-height: 170px;
+            object-fit: cover;
+        }
+
+        .mini-content {
+            padding: 18px;
+        }
+
+        .mini-content h4 {
+            font-size: 17px;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .mini-content p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        .latest-section {
+            padding: 40px 0 70px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .news-card {
+            background: #fff;
+            border: 1px solid #ececf2;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: .3s;
+            cursor: pointer;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(30,30,60,.08);
+        }
+
+        .news-card-image {
+            height: 190px;
+            overflow: hidden;
+        }
+
+        .news-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .4s;
+        }
+
+        .news-card:hover .news-card-image img {
+            transform: scale(1.06);
+        }
+
+        .news-card-content {
+            padding: 18px;
+        }
+
+        .news-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 10px;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .news-category {
+            color: #635bff;
+            font-weight: 700;
+        }
+
+        .news-card h3 {
+            font-size: 17px;
+            line-height: 1.55;
+            margin-bottom: 9px;
+        }
+
+        .news-card p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        .newsletter {
+            padding: 65px 0;
+        }
+
+        .newsletter-box {
+            background: linear-gradient(135deg, #635bff, #7d75ff);
+            color: #fff;
+            border-radius: 25px;
+            padding: 45px;
+            text-align: center;
+        }
+
+        .newsletter-box h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .newsletter-box p {
+            color: #e9e8ff;
+            margin-bottom: 25px;
+        }
+
+        .newsletter-form {
+            max-width: 600px;
+            margin: auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            border: none;
+            outline: none;
+            border-radius: 12px;
+            padding: 14px 17px;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .newsletter-form button {
+            border: none;
+            background: #171725;
+            color: #fff;
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-family: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #151522;
+            color: #fff;
+            padding: 45px 0 25px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .footer-about {
+            color: #aaa;
+            max-width: 450px;
+        }
+
+        .footer-title {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            border-top: 1px solid #292938;
+            margin-top: 35px;
+            padding-top: 20px;
+            text-align: center;
+            color: #888;
+            font-size: 13px;
+        }
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.65);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 2000;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-box {
+            background: #fff;
+            width: min(750px, 100%);
+            max-height: 90vh;
+            overflow: auto;
+            border-radius: 22px;
+            position: relative;
+        }
+
+        .modal-box img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .modal-content {
+            padding: 28px;
+        }
+
+        .modal-content h2 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .modal-content p {
+            color: #666;
+            line-height: 2;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 38px;
+            height: 38px;
+            border: none;
+            border-radius: 50%;
+            background: #fff;
+            font-size: 22px;
+            cursor: pointer;
+            box-shadow: 0 3px 12px rgba(0,0,0,.15);
+            z-index: 2;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #171725;
+            color: #fff;
+            padding: 14px 20px;
+            border-radius: 12px;
+            transform: translateY(120px);
+            opacity: 0;
+            transition: .3s;
+            z-index: 3000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        @media (max-width: 1000px) {
+
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-mini {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: none;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 750px) {
+
+            .navbar {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 55px 0;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .featured-mini {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mini-card {
+                grid-template-columns: 120px 1fr;
+            }
+
+            .mini-card img {
+                width: 120px;
+            }
+
+            .featured-main,
+            .featured-main img {
+                min-height: 350px;
+            }
+
+            .featured-content h3 {
+                font-size: 24px;
+            }
+
+            .newsletter-box {
+                padding: 30px 20px;
+            }
+            .card{
+                 background: #1E293B;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container navbar">
+
+        <a href="#" class="logo">
+           <div class="logo">
+            <img
+                src="1.png"
+                alt="AI News"
+                onerror="this.style.display='none'; document.querySelector('.logo-fallback').style.display='flex';"
+            >
+               </div>
+            <span class="logo-fallback">AI</span>
+
+            <span>AI News</span>
+
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">الرئيسية</a>
+            </li>
+
+            <li>
+                <a href="#latest">آخر الأخبار</a>
+            </li>
+
+            <li>
+                <a href="#featured">مميز</a>
+            </li>
+
+            <li>
+                <a href="#categories">التصنيفات</a>
+            </li>
+
+            <li>
+                <a href="#newsletter" class="nav-btn">
+                    النشرة البريدية
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+</header>
+
+<section class="hero">
+
+    <div class="container hero-content">
+
+        <div class="hero-badge">
+            أخبار الذكاء الاصطناعي أولًا بأول
+        </div>
+
+        <h1>
+            عالم الذكاء الاصطناعي
+            <span>بين يديك.</span>
+        </h1>
+
+        <p>
+            منصة عربية متخصصة في أحدث أخبار وتقنيات الذكاء الاصطناعي،
+            من النماذج الجديدة إلى الشركات والأبحاث والأدوات.
+        </p>
+
+        <div class="hero-features">
+            <div>🤖 نماذج AI</div>
+            <div>🏢 شركات التقنية</div>
+            <div>🔬 أبحاث جديدة</div>
+            <div>🚀 أحدث الأدوات</div>
+        </div>
+
+        <div class="hero-actions">
+
+            <a href="#latest" class="primary-btn">
+                اكتشف الأخبار
+            </a>
+
+            <a href="#featured" class="secondary-btn">
+                الأخبار المميزة
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="categories-section" id="categories">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>التصنيفات</h2>
+
+            <p>
+                اختر المجال الذي تريد متابعة أخباره
+            </p>
+
+        </div>
+
+        <div class="categories">
+
+            <button class="category-btn active" data-category="all">
+                الكل
+            </button>
+
+            <button class="category-btn" data-category="models">
+                نماذج الذكاء الاصطناعي
+            </button>
+
+            <button class="category-btn" data-category="business">
+                الشركات
+            </button>
+
+            <button class="category-btn" data-category="tools">
+                الأدوات
+            </button>
+
+            <button class="category-btn" data-category="future">
+                المستقبل
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="featured-section" id="featured">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>أخبار مميزة</h2>
+
+            <p>
+                أهم الأخبار التي تستحق اهتمامك
+            </p>
+
+        </div>
+
+        <div class="featured-grid">
+
+            <article class="featured-main" onclick="openArticle(0)">
+
+                <img
+                    src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80"
+                    alt="الذكاء الاصطناعي"
+                    onerror="this.onerror=null; this.src='https://placehold.co/1200x700/635bff/ffffff?text=AI+News';"
+                >
+
+                <div class="featured-overlay">
+
+                    <div class="featured-content">
+
+                        <span class="badge">
+                            الأكثر قراءة
+                        </span>
+
+                        <h3>
+                            الجيل الجديد من نماذج الذكاء الاصطناعي يفتح آفاقًا جديدة
+                        </h3>
+
+                        <p>
+                            تطورات جديدة في عالم النماذج الذكية وقدراتها على فهم النصوص والصور والبرمجة.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <div class="featured-mini">
+
+                <article class="mini-card" onclick="openArticle(1)">
+
+                    <img
+                        src="9.webp"
+                        alt="التقنية"
+                        onerror="this.onerror=null; this.src='https://placehold.co/700x500/635bff/ffffff?text=Technology';"
+                    >
+
+                    <div class="mini-content">
+
+                        <span class="badge">
+                            شركات
+                        </span>
+
+                        <h4>
+                            استثمارات ضخمة في شركات الذكاء الاصطناعي
+                        </h4>
+
+                        <p>
+                            المزيد من الشركات تدخل سباق الذكاء الاصطناعي.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="mini-card" onclick="openArticle(2)">
+
+                    <img
+                        src="6.webp"
+                        alt="روبوت"
+                        onerror="this.onerror=null; this.src='https://placehold.co/700x500/635bff/ffffff?text=Robotics';"
+                    >
+
+                    <div class="mini-content">
+
+                        <span class="badge">
+                            المستقبل
+                        </span>
+
+                        <h4>
+                            الروبوتات الذكية تقترب أكثر من الحياة اليومية
+                        </h4>
+
+                        <p>
+                            تقنيات جديدة تجعل الروبوتات أكثر ذكاءً وتفاعلًا.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="latest-section" id="latest">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>آخر الأخبار</h2>
+
+            <p>
+                تابع أحدث المستجدات في عالم الذكاء الاصطناعي
+            </p>
+
+        </div>
+
+        <div class="news-grid" id="newsGrid"></div>
+
+    </div>
+
+</section>
+
+<section class="newsletter" id="newsletter">
+
+    <div class="container">
+
+        <div class="newsletter-box">
+
+            <h2>
+                اشترك في النشرة البريدية
+            </h2>
+
+            <p>
+                احصل على أهم أخبار الذكاء الاصطناعي مباشرة إلى بريدك الإلكتروني.
+            </p>
+
+            <form class="newsletter-form" id="newsletterForm">
+
+                <input
+                    type="email"
+                    id="emailInput"
+                    placeholder="أدخل بريدك الإلكتروني"
+                    required
+                >
+
+                <button type="submit">
+                    اشترك الآن
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div>
+
+                <div class="footer-logo">
+                    AI News
+                </div>
+
+                <p class="footer-about">
+                    منصة عربية تهتم بأحدث أخبار وتقنيات الذكاء الاصطناعي،
+                    وتقدم محتوى مبسطًا ومفيدًا لكل المهتمين بالمجال.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3 class="footer-title">
+                    روابط سريعة
+                </h3>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="#latest">آخر الأخبار</a>
+                    </li>
+
+                    <li>
+                        <a href="#featured">الأخبار المميزة</a>
+                    </li>
+
+                    <li>
+                        <a href="#categories">التصنيفات</a>
+                    </li>
+
+                    <li>
+                        <a href="#newsletter">النشرة البريدية</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div>
+
+                <h3 class="footer-title">
+                    التصنيفات
+                </h3>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="#categories">النماذج</a>
+                    </li>
+
+                    <li>
+                        <a href="#categories">الشركات</a>
+                    </li>
+
+                    <li>
+                        <a href="#categories">الأدوات</a>
+                    </li>
+
+                    <li>
+                        <a href="#categories">المستقبل</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 AI News - جميع الحقوق محفوظة
+        </div>
+
+    </div>
+
+</footer>
+
+<div class="modal" id="articleModal">
+
+    <div class="modal-box">
+
+        <button class="close-modal" onclick="closeArticle()">
+            ×
+        </button>
+
+        <img id="modalImage" src="" alt="">
+
+        <div class="modal-content">
+
+            <span class="badge" id="modalCategory"></span>
+
+            <h2 id="modalTitle"></h2>
+
+            <p id="modalDescription"></p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="toast" id="toast">
+    تم الاشتراك بنجاح في النشرة البريدية 🎉
+</div>
+
+<script>
+
+const news = [
+
+    {
+        title: "الجيل الجديد من نماذج الذكاء الاصطناعي يفتح آفاقًا جديدة",
+        description: "تطورات جديدة في عالم النماذج الذكية وقدراتها على فهم النصوص والصور والبرمجة.",
+        category: "models",
+        categoryName: "نماذج",
+        date: "منذ ساعتين",
+        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80"
+    },
+
+    {
+        title: "استثمارات ضخمة في شركات الذكاء الاصطناعي",
+        description: "المزيد من الشركات التقنية تدخل سباق الذكاء الاصطناعي باستثمارات ومشاريع جديدة.",
+        category: "business",
+        categoryName: "شركات",
+        date: "منذ 4 ساعات",
+        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=80"
+    },
+
+    {
+        title: "أفضل أدوات الذكاء الاصطناعي التي تساعدك في العمل",
+        description: "مجموعة من الأدوات الجديدة التي تساعد على زيادة الإنتاجية وإنجاز المهام بشكل أسرع.",
+        category: "tools",
+        categoryName: "أدوات",
+        date: "منذ 6 ساعات",
+        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=900&q=80"
+    },
+
+    {
+        title: "الروبوتات الذكية تقترب أكثر من الحياة اليومية",
+        description: "تقنيات جديدة تجعل الروبوتات أكثر ذكاءً وقدرة على التفاعل مع الإنسان.",
+        category: "future",
+        categoryName: "المستقبل",
+        date: "منذ 8 ساعات",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=900&q=80"
+    },
+
+    {
+        title: "تطور كبير في تقنيات توليد الصور بالذكاء الاصطناعي",
+        description: "نماذج حديثة قادرة على إنشاء صور واقعية وتفاصيل دقيقة من وصف نصي بسيط.",
+        category: "models",
+        categoryName: "نماذج",
+        date: "منذ 10 ساعات",
+        image: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=900&q=80"
+    },
+
+    {
+        title: "شركات التقنية تطلق منتجات جديدة تعتمد على AI",
+        description: "تزايد استخدام الذكاء الاصطناعي في المنتجات والخدمات الرقمية الحديثة.",
+        category: "business",
+        categoryName: "شركات",
+        date: "منذ 12 ساعة",
+        image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80"
+    },
+
+    {
+        title: "أدوات AI جديدة للمبرمجين والمطورين",
+        description: "أدوات مساعدة تجعل كتابة الأكواد واكتشاف الأخطاء وتطوير التطبيقات أسهل.",
+        category: "tools",
+        categoryName: "أدوات",
+        date: "منذ يوم",
+        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80"
+    },
+
+    {
+        title: "كيف سيغير الذكاء الاصطناعي مستقبل الوظائف؟",
+        description: "نظرة على التغييرات المحتملة في سوق العمل مع انتشار أدوات الذكاء الاصطناعي.",
+        category: "future",
+        categoryName: "المستقبل",
+        date: "منذ يوم",
+        image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80"
+    }
+
+];
+
+const newsGrid = document.getElementById("newsGrid");
+const categoryButtons = document.querySelectorAll(".category-btn");
+
+let currentCategory = "all";
+
+function renderNews(items) {
+
+    newsGrid.innerHTML = "";
+
+    if (items.length === 0) {
+
+        newsGrid.innerHTML = `
+            <p style="grid-column:1/-1;text-align:center;color:#777;padding:40px;">
+                لا توجد أخبار في هذا التصنيف حاليًا.
+            </p>
+        `;
+
+        return;
+    }
+
+    items.forEach((item) => {
+
+        const card = document.createElement("article");
+
+        card.className = "news-card";
+
+        card.onclick = () => openArticle(
+            news.indexOf(item)
+        );
+
+        card.innerHTML = `
+
+            <div class="news-card-image">
+
+                <img
+                    src="${item.image}"
+                    alt="${item.title}"
+                    onerror="this.onerror=null;this.src='https://placehold.co/900x600/635bff/ffffff?text=AI+News';"
+                >
+
+            </div>
+
+            <div class="news-card-content">
+
+                <div class="news-meta">
+
+                    <span class="news-category">
+                        ${item.categoryName}
+                    </span>
+
+                    <span>
+                        ${item.date}
+                    </span>
+
+                </div>
+
+                <h3>
+                    ${item.title}
+                </h3>
+
+                <p>
+                    ${item.description}
+                </p>
+
+            </div>
+        `;
+
+        newsGrid.appendChild(card);
+
+    });
+}
+
+function filterByCategory() {
+
+    const filtered =
+        currentCategory === "all"
+        ? news
+        : news.filter(
+            item => item.category === currentCategory
+        );
+
+    renderNews(filtered);
+}
+
+categoryButtons.forEach(button => {
+
+    button.addEventListener("click", function() {
+
+        categoryButtons.forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+        this.classList.add("active");
+
+        currentCategory = this.dataset.category;
+
+        filterByCategory();
+
+    });
+
+});
+
+function openArticle(index) {
+
+    const item = news[index];
+
+    if (!item) return;
+
+    const modalImage = document.getElementById("modalImage");
+
+    modalImage.src = item.image;
+
+    modalImage.onerror = function() {
+        this.onerror = null;
+        this.src =
+            "https://placehold.co/900x600/635bff/ffffff?text=AI+News";
+    };
+
+    document.getElementById("modalCategory").textContent =
+        item.categoryName;
+
+    document.getElementById("modalTitle").textContent =
+        item.title;
+
+    document.getElementById("modalDescription").textContent =
+        item.description;
+
+    document.getElementById("articleModal")
+        .classList.add("active");
+
+    document.body.style.overflow = "hidden";
+}
+
+function closeArticle() {
+
+    document.getElementById("articleModal")
+        .classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+document.getElementById("articleModal")
+    .addEventListener("click", function(e) {
+
+        if (e.target === this) {
+            closeArticle();
+        }
+
+    });
+
+document.addEventListener("keydown", function(e) {
+
+    if (e.key === "Escape") {
+        closeArticle();
+    }
+
+});
+
+document.getElementById("newsletterForm")
+    .addEventListener("submit", function(e) {
+
+        e.preventDefault();
+
+        const email =
+            document.getElementById("emailInput")
+            .value
+            .trim();
+
+        if (!email) {
+            return;
+        }
+
+        document.getElementById("emailInput").value = "";
+
+        const toast =
+            document.getElementById("toast");
+
+        toast.classList.add("show");
+
+        setTimeout(() => {
+
+            toast.classList.remove("show");
+
+        }, 3000);
+
+    });
+
+renderNews(news);
+
+</script>
+<p> الوقت الحالي بGMT+1</p>
+<div id="date-time"></div>
+
+<style>
+  #date-time {
+    font-size: 18px;
+    font-weight: bold;
+    direction: rtl;
+    text-align: center;
+    padding: 10px;
+    color: #1565c0;
+  }
+</style>
+
+<script>
+function updateDateTime() {
+  const now = new Date();
+
+  const options = {
+    timeZone: "Africa/Algiers",
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  };
+
+  const date = new Intl.DateTimeFormat("ar-DZ", options).format(now);
+
+  const time = new Intl.DateTimeFormat("ar-DZ", {
+    timeZone: "Africa/Algiers",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  }).format(now);
+
+  document.getElementById("date-time").textContent =
+    date + " — " + time;
+}
+
+updateDateTime();
+setInterval(updateDateTime, 1000);
+</script>
+</body>
+</html>

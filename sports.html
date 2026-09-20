@@ -1,0 +1,228 @@
+ <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>الرياضة | SKY WEBS NEWS</title>
+
+<link rel="stylesheet" href="style.css">
+<style>
+     .logo img {
+    width: 220px;
+    height: 70px;
+    object-fit: contain;
+}
+</style>
+</head>
+
+
+<body class="sport-section">
+
+
+
+<header>
+<div class="logo">
+    <img src="1.png" alt="">
+</div>
+<div class="brand">
+
+<h1 class="logo">
+SKY WEBS NEWS
+</h1>
+</div>
+<nav>
+
+<a href="index.html">
+الرئيسية
+</a>
+
+
+<a href="world.html">
+العالم
+</a>
+
+
+<a href="ai.html">
+التكنولوجيا
+</a>
+
+
+<a href="economy.html">
+اقتصاد
+</a>
+
+
+</nav>
+</header>
+<section class="hero">
+<div class="hero-content">
+<h1>
+
+أخبار
+<span>
+الرياضة
+</span>
+
+</h1>
+<p>
+
+آخر نتائج المباريات
+والبطولات والتحليلات الرياضية.
+
+</p>
+</div>
+</section>
+<section class="news">
+<div class="section-title">
+
+
+<h2>
+
+أحدث الأخبار
+<span>
+الرياضية
+</span>
+
+</h2>
+</div>
+<div class="news-grid">
+<article class="news-card">
+<img src="https://images.unsplash.com/photo-1517649763962-0c623066013b"
+alt="كرة القدم">
+
+
+<div class="news-content">
+
+
+<h3>
+
+أبرز نتائج المباريات العالمية
+
+</h3>
+
+
+<p>
+
+تغطية شاملة لنتائج البطولات
+وتحليلات الفرق واللاعبين.
+
+</p>
+
+<a href="#" class="read-more">
+
+قراءة المزيد
+
+</a>
+</div>
+</article>
+<article class="news-card">
+<img src="13.webp"
+alt="الأخبار الدولية">
+<div class="news-content">
+<h3>
+بداية مباريات دوري ابطال اوروبا 
+
+</h3>
+<a href="#" class="read-more">
+
+قراءة المزيد
+
+</a>
+</div>
+</article>
+<article class="news-card">
+<img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211"
+alt="الجمهور الرياضي">
+<div class="news-content">
+
+
+<h3>
+
+أخبار اللاعبين والانتقالات
+
+</h3>
+
+
+<p>
+
+آخر أخبار النجوم والصفقات الرياضية.
+
+</p>
+<a href="#" class="read-more">
+
+قراءة المزيد
+
+</a>
+</div>
+</article>
+</div>
+</section>
+<section class="live">
+<div class="live-box">
+<h2>
+
+بث رياضي مباشر
+
+</h2>
+<p>
+
+تابع أهم الأحداث الرياضية
+والتغطيات المباشرة.
+
+</p>
+</div>
+</section>
+<footer>
+<div class="copyright">
+© 2026 SKY WEBS NEWS
+</div>
+<p> الوقت الحالي بGMT+1</p>
+<div id="date-time"></div>
+
+<style>
+  #date-time {
+    font-size: 18px;
+    font-weight: bold;
+    direction: rtl;
+    text-align: center;
+    padding: 10px;
+    color: #1565c0;
+  }
+</style>
+
+<script>
+function updateDateTime() {
+  const now = new Date();
+
+  const options = {
+    timeZone: "Africa/Algiers",
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  };
+
+  const date = new Intl.DateTimeFormat("ar-DZ", options).format(now);
+
+  const time = new Intl.DateTimeFormat("ar-DZ", {
+    timeZone: "Africa/Algiers",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  }).format(now);
+
+  document.getElementById("date-time").textContent =
+    date + " — " + time;
+}
+
+updateDateTime();
+setInterval(updateDateTime, 1000);
+</script>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

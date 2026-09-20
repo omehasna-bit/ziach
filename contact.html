@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>اتصل بنا | SKY WEBS NEWS</title>
+
+<link rel="stylesheet" href="style.css">
+<style>
+     .logo img {
+    width: 220px;
+    height: 70px;
+    object-fit: contain;
+}
+</style>
+</head>
+
+
+
+<body>
+
+
+
+<header>
+<div class="logo">
+<img src="1.png" alt="">
+</div>
+
+<div class="brand">
+
+
+<h1 class="logo">
+SKY WEBS NEWS
+</h1>
+</div>
+<nav>
+
+
+<a href="index.html">
+الرئيسية
+</a>
+
+
+<a href="world.html">
+العالم
+</a>
+
+
+<a href="ai.html">
+التكنولوجيا
+</a>
+
+
+<a href="economy.html">
+اقتصاد
+</a>
+
+
+<a href="sports.html">
+رياضة
+</a>
+
+
+</nav>
+
+
+</header>
+
+
+
+
+
+
+
+
+
+<section class="contact-section">
+
+
+
+<div class="section-title">
+
+
+<h2>
+
+تواصل
+<span>
+معنا
+</span>
+
+</h2>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="contact-box">
+
+
+
+<form id="contactForm">
+
+
+
+<input 
+type="text"
+id="name"
+placeholder="الاسم"
+required>
+
+
+
+<input 
+type="email"
+id="email"
+placeholder="البريد الإلكتروني"
+required>
+
+
+
+
+<textarea 
+id="message"
+placeholder="اكتب رسالتك"
+required></textarea>
+
+
+
+
+
+<button type="submit">
+
+إرسال الرسالة
+
+</button>
+
+
+
+
+</form>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<footer>
+
+
+<div class="footer-grid">
+
+
+
+<div class="footer-box">
+
+
+<h3>
+SKY WEBS NEWS
+</h3>
+
+
+<p>
+
+منصة أخبار تقنية وعالمية
+تقدم أحدث الأخبار.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="footer-box">
+
+
+<h3>
+روابط
+</h3>
+
+
+<a href="index.html">
+الرئيسية
+</a>
+
+
+<a href="ai.html">
+التكنولوجيا
+</a>
+
+
+<a href="world.html">
+العالم
+</a>
+
+
+</div>
+
+
+
+
+
+
+<div class="footer-box">
+
+
+<h3>
+تابعنا
+</h3>
+
+
+<a href="https://www.Facebook.com">
+Facebook
+</a>
+
+
+<a href="https://www.instagram.com">
+Instagram
+</a>
+
+
+<a href="https://www.YouTube.com">
+YouTube
+</a>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+<div class="copyright">
+
+© 2026 SKY WEBS NEWS
+
+</div>
+
+
+
+</footer>
+
+
+
+
+
+
+
+<script src="script.js"></script>
+
+
+
+<script>
+
+
+const form =
+document.getElementById("contactForm");
+
+
+
+form.addEventListener("submit",function(e){
+
+
+e.preventDefault();
+
+
+
+alert("تم إرسال رسالتك بنجاح");
+
+
+
+form.reset();
+
+
+
+});
+
+
+
+</script>
+
+<p> الوقت الحالي بGMT+1</p>
+<div id="date-time"></div>
+
+<style>
+  #date-time {
+    font-size: 18px;
+    font-weight: bold;
+    direction: rtl;
+    text-align: center;
+    padding: 10px;
+    color: #1565c0;
+  }
+</style>
+
+<script>
+function updateDateTime() {
+  const now = new Date();
+
+  const options = {
+    timeZone: "Africa/Algiers",
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  };
+
+  const date = new Intl.DateTimeFormat("ar-DZ", options).format(now);
+
+  const time = new Intl.DateTimeFormat("ar-DZ", {
+    timeZone: "Africa/Algiers",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  }).format(now);
+
+  document.getElementById("date-time").textContent =
+    date + " — " + time;
+}
+
+updateDateTime();
+setInterval(updateDateTime, 1000);
+</script>
+
+</body>
+
+</html>

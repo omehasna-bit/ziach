@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News</title>
+
+    <style>
+        .logo img{
+        width: 220px;
+        height: 70px;
+        object-fit: contain;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0F172A;
+            color: #F8FAFC;
+        }
+
+        header {
+            background: #111827;
+            padding: 25px;
+            text-align: center;
+            border-bottom: 1px solid #334155;
+        }
+
+        header h1 {
+            color: #818CF8;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #94A3B8;
+        }
+
+        nav {
+            background: #1E293B;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #818CF8;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .title {
+            font-size: 28px;
+            margin-bottom: 25px;
+            border-right: 5px solid #6366F1;
+            padding-right: 12px;
+        }
+
+        .news {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #1E293B;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .card img:hover {
+            transform: scale(1.05);
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .content h2 {
+            color: #A5B4FC;
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .content p {
+            color: #CBD5E1;
+            line-height: 1.8;
+        }
+
+        .date {
+            display: block;
+            color: #64748B;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #1E293B;
+            width: 100%;
+            max-width: 850px;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 15px;
+            padding: 25px;
+            position: relative;
+        }
+
+        .modal-content img {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .modal-content h2 {
+            color: #A5B4FC;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .modal-content p {
+            color: #CBD5E1;
+            font-size: 18px;
+            line-height: 2;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background: #EF4444;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            background: #DC2626;
+        }
+
+        footer {
+            margin-top: 50px;
+            background: #111827;
+            padding: 25px;
+            text-align: center;
+            color: #94A3B8;
+        }
+
+        @media (max-width: 900px) {
+            .news {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .news {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            .modal-content h2 {
+                font-size: 23px;
+            }
+
+            .modal-content p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="1.png" alt="">
+        </div>
+        <h1>📰 sky WEBS news</h1>
+        <p>آخر الأخبار والمستجدات</p>
+    </header>
+
+    <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="world.html">العالم</a>
+        <a href="AI-News-fixed.html">ذكاء اصطناعي</a>
+        <a href="sports.html">رياضة</a>
+        <a href="economy.html">اقتصاد</a>
+    </nav>
+
+    <main class="container">
+
+        <h2 class="title">آخر الأخبار</h2>
+
+        <section class="news">
+
+            <article class="card">
+                <img
+                    src="https://picsum.photos/800/500?random=11"
+                    alt="الذكاء الاصطناعي"
+                    onclick="openNews(this)"
+                    data-title="تطورات جديدة في الذكاء الاصطناعي"
+                    data-text="يشهد مجال الذكاء الاصطناعي تطورًا سريعًا خلال السنوات الأخيرة، حيث أصبحت الأنظمة الذكية قادرة على تنفيذ العديد من المهام وتحليل المعلومات بصورة أكثر تطورًا. وتستمر الشركات والمؤسسات في تطوير تقنيات جديدة يمكن استخدامها في التعليم والطب والأعمال والعديد من المجالات الأخرى."
+                >
+
+                <div class="content">
+                    <h2>تطورات جديدة في الذكاء الاصطناعي</h2>
+                    <p>
+                        تعرف على أحدث التطورات في مجال الذكاء الاصطناعي والتقنيات الحديثة.
+                    </p>
+                    <span class="date">17 سبتمبر 2026</span>
+                </div>
+            </article>
+
+            <article class="card">
+                <img
+                    src="https://picsum.photos/800/500?random=12"
+                    alt="التكنولوجيا"
+                    onclick="openNews(this)"
+                    data-title="تكنولوجيا المستقبل"
+                    data-text="تتطور التكنولوجيا بصورة مستمرة، وتظهر كل فترة أجهزة وخدمات جديدة تهدف إلى تسهيل حياة المستخدمين. وتشمل هذه التطورات الحوسبة الحديثة والخدمات الرقمية والأنظمة الذكية."
+                >
+
+                <div class="content">
+                    <h2>تكنولوجيا المستقبل</h2>
+                    <p>
+                        تقنيات جديدة تغير طريقة استخدامنا للأجهزة والخدمات الرقمية.
+                    </p>
+                    <span class="date">17 سبتمبر 2026</span>
+                </div>
+            </article>
+
+            <article class="card">
+                <img
+                    src="https://picsum.photos/800/500?random=13"
+                    alt="الرياضة"
+                    onclick="openNews(this)"
+                    data-title="أحدث الأخبار الرياضية"
+                    data-text="تابع آخر المستجدات الرياضية ونتائج المباريات وأبرز الأحداث في مختلف الرياضات. تعرف على أهم الأخبار والتطورات الرياضية."
+                >
+
+                <div class="content">
+                    <h2>أحدث الأخبار الرياضية</h2>
+                    <p>
+                        تعرف على آخر المستجدات والنتائج في عالم الرياضة.
+                    </p>
+                    <span class="date">17 سبتمبر 2026</span>
+                </div>
+            </article>
+
+            <article class="card">
+                <img
+                    src="https://picsum.photos/800/500?random=14"
+                    alt="الاقتصاد"
+                    onclick="openNews(this)"
+                    data-title="أخبار الاقتصاد"
+                    data-text="تعرف على أهم التطورات الاقتصادية والأسواق والتغيرات التي تشهدها مختلف القطاعات حول العالم."
+                >
+
+                <div class="content">
+                    <h2>أخبار الاقتصاد</h2>
+                    <p>
+                        أهم التطورات الاقتصادية والأسواق العالمية.
+                    </p>
+                    <span class="date">17 سبتمبر 2026</span>
+                </div>
+            </article>
+
+            <article class="card">
+                <img
+                    src="https://picsum.photos/800/500?random=15"
+                    alt="الابتكار"
+                    onclick="openNews(this)"
+                    data-title="ابتكارات تقنية جديدة"
+                    data-text="تساعد الابتكارات التقنية الحديثة على تطوير العديد من الخدمات وتحسين تجربة المستخدم في العالم الرقمي، كما تساهم في ظهور حلول جديدة للمشكلات اليومية."
+                >
+
+                <div class="content">
+                    <h2>ابتكارات تقنية جديدة</h2>
+                    <p>
+                        ابتكارات حديثة تساعد على تطوير العالم الرقمي.
+                    </p>
+                    <span class="date">17 سبتمبر 2026</span>
+                </div>
+            </article>
+
+            <article class="card">
+                <img
+                    src="https://picsum.photos/800/500?random=16"
+                    alt="الروبوتات"
+                    onclick="openNews(this)"
+                    data-title="الروبوتات والذكاء الاصطناعي"
+                    data-text="أصبحت الروبوتات أكثر تطورًا مع دمج تقنيات الذكاء الاصطناعي، مما يسمح لها بتنفيذ مهام متنوعة في بيئات مختلفة."
+                >
+
+                <div class="content">
+                    <h2>الروبوتات والذكاء الاصطناعي</h2>
+                    <p>
+                        كيف تساهم الروبوتات الحديثة في تغيير حياتنا؟
+                    </p>
+                    <span class="date">17 سبتمبر 2026</span>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <div class="modal" id="newsModal" onclick="closeNews(event)">
+
+        <div class="modal-content">
+
+            <button class="close" onclick="closeNews()">×</button>
+
+            <img id="modalImage" src="" alt="صورة الخبر">
+
+            <h2 id="modalTitle"></h2>
+
+            <p id="modalText"></p>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 AI News - جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script>
+        function openNews(image) {
+            const modal = document.getElementById("newsModal");
+            const modalImage = document.getElementById("modalImage");
+            const modalTitle = document.getElementById("modalTitle");
+            const modalText = document.getElementById("modalText");
+
+            modalImage.src = image.src;
+            modalTitle.textContent = image.dataset.title;
+            modalText.textContent = image.dataset.text;
+
+            modal.classList.add("active");
+
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeNews(event) {
+            if (event && event.target !== document.getElementById("newsModal")) {
+                return;
+            }
+
+            const modal = document.getElementById("newsModal");
+
+            modal.classList.remove("active");
+
+            document.body.style.overflow = "auto";
+        }
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                closeNews();
+            }
+        });
+    </script>
+<p> الوقت الحالي بGMT+1</p>
+<div id="date-time"></div>
+
+<style>
+  #date-time {
+    font-size: 18px;
+    font-weight: bold;
+    direction: rtl;
+    text-align: center;
+    padding: 10px;
+    color: #1565c0;
+  }
+</style>
+
+<script>
+function updateDateTime() {
+  const now = new Date();
+
+  const options = {
+    timeZone: "Africa/Algiers",
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  };
+
+  const date = new Intl.DateTimeFormat("ar-DZ", options).format(now);
+
+  const time = new Intl.DateTimeFormat("ar-DZ", {
+    timeZone: "Africa/Algiers",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  }).format(now);
+
+  document.getElementById("date-time").textContent =
+    date + " — " + time;
+}
+
+updateDateTime();
+setInterval(updateDateTime, 1000);
+</script>
+</body>
+</html>

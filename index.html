@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SKY WEBS NEWS | أخبار التقنية والعالم</title>
+
+    <meta name="description"
+        content="SKY WEBS NEWS منصة أخبار عالمية للتكنولوجيا والذكاء الاصطناعي والرياضة والاقتصاد">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .news {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .news-content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            width: 100%;
+        }
+
+        .news-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .logo img {
+            width: 180px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+      .image-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .image-container a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 0;
+            transition: transform 0.4s ease;
+        }
+
+        .news-card:hover .image-container img {
+            transform: scale(1.05);
+        }
+
+        .image-container .category {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 4px;
+            z-index: 5;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.9);
+        }
+
+        .category.tech { background: #1976d2; }
+        .category.world { background: #37474f; }
+        .category.middle-east { background: #00897b; }
+        .category.sports { background: #2e7d32; }
+        .category.economy { background: #ef6c00; }
+        .category.algeria { background: #c62828; }
+        .category.ai { background: #6a1b9a; }
+        .category.science { background: #1565c0; }
+        .category.breaking { background: #d50000; }
+
+        .news-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .news-content h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .news-content p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            color: #1565c0;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        #date-time {
+            font-size: 18px;
+            font-weight: bold;
+            direction: rtl;
+            text-align: center;
+            padding: 10px;
+            color: #1565c0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="brand">
+
+        <div class="logo">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500" alt="SKY WEBS NEWS">
+        </div>
+
+        <h1 class="logo">
+            SKY WEBS NEWS
+        </h1>
+
+    </div>
+
+    <nav>
+
+        <a href="read.html">القراءة</a>
+        <a href="world.html">العالم</a>
+        <a href="middle-east.html">الشرق الأوسط</a>
+        <a href="sports.html">رياضة</a>
+        <a href="economy.html">اقتصاد</a>
+        <a href="Algeria-News-fixed.html">أخبار الجزائر</a>
+        <a href="contact.html">تواصل معنا</a>
+
+        <ul class="menu">
+
+            <li class="dropdown">
+
+                <a href="#">التكنولوجيا</a>
+
+                <ul class="dropdown-menu">
+                    <li><a href="AI-News-fixed.html">الذكاء الاصطناعي</a></li>
+                    <li><a href="breaking.html">الأخبار العاجلة</a></li>
+                    <li><a href="science.html">العلوم</a></li>
+                </ul>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>آخر <span>الأخبار</span> العالمية</h1>
+
+        <p>
+            تابع أحدث الأخبار التقنية والعالمية
+            والذكاء الاصطناعي والاقتصاد والرياضة
+            لحظة بلحظة.
+        </p>
+
+        <a href="#news" class="hero-btn">مشاهدة الأخبار</a>
+
+    </div>
+
+</section>
+
+<div class="breaking-news-ticker">
+    🔴 عاجل: تحديثات مباشرة للأخبار العالمية | التكنولوجيا | الرياضة | الاقتصاد
+</div>
+
+<section class="news" id="news">
+
+    <div class="section-title">
+        <h2>أحدث <span>الأخبار</span></h2>
+    </div>
+
+    <div class="news-content-grid">
+
+        <article class="news-card">
+            <div class="image-container">
+                <a href="technology.html">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600" alt="التكنولوجيا">
+                </a>
+                <div class="category tech">التكنولوجيا</div>
+            </div>
+            <div class="news-content">
+                <h3>أحدث الابتكارات التقنية حول العالم</h3>
+                <p>تعرف على أبرز التطورات والابتكارات التي تشهدها التكنولوجيا الحديثة.</p>
+                <a href="technology.html" class="read-more">قراءة المزيد</a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <div class="image-container">
+                <a href="world.html">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600" alt="الأخبار العالمية">
+                </a>
+                <div class="category world">العالم</div>
+            </div>
+            <div class="news-content">
+                <h3>آخر التطورات والأحداث العالمية</h3>
+                <p>متابعة مستمرة لأهم الأحداث والتطورات الدولية حول العالم.</p>
+                <a href="world.html" class="read-more">قراءة المزيد</a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <div class="image-container">
+                <a href="middle-east.html">
+                    <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=600" alt="الشرق الأوسط">
+                </a>
+                <div class="category middle-east">الشرق الأوسط</div>
+            </div>
+            <div class="news-content">
+                <h3>أبرز أخبار وتطورات الشرق الأوسط</h3>
+                <p>أهم المستجدات والأحداث في منطقة الشرق الأوسط.</p>
+                <a href="middle-east.html" class="read-more">قراءة المزيد</a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <div class="image-container">
+                <a href="sports.html">
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600" alt="الرياضة">
+                </a>
+                <div class="category sports">رياضة</div>
+            </div>
+            <div class="news-content">
+                <h3>أهم الأخبار الرياضية اليوم</h3>
+                <p>نتائج وتحليلات المباريات وأبرز الأخبار الرياضية العالمية.</p>
+                <a href="sports.html" class="read-more">قراءة المزيد</a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <div class="image-container">
+                <a href="economy.html">
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600" alt="الاقتصاد">
+                </a>
+                <div class="category economy">اقتصاد</div>
+            </div>
+            <div class="news-content">
+                <h3>آخر أخبار الاقتصاد والأسواق</h3>
+                <p>متابعة الأسواق العالمية وأهم التطورات الاقتصادية والمالية.</p>
+                <a href="economy.html" class="read-more">قراءة المزيد</a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <div class="image-container">
+                <a href="Algeria-News-fixed.html">
+                    <img src="https://images.unsplash.com/photo-1569974498991-d3c12a504f9c?w=600" alt="أخبار الجزائر">
+                </a>
+                <div class="category algeria">الجزائر</div>
+            </div>
+            <div class="news-content">
+                <h3>آخر أخبار الجزائر</h3>
+                <p>أهم الأخبار والمستجدات المحلية في الجزائر.</p>
+                <a href="Algeria-News-fixed.html" class="read-more">قراءة المزيد</a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <div class="image-container">
+                <a href="AI-News-fixed.html">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600" alt="الذكاء الاصطناعي">
+                </a>
+                <div class="category ai">ذكاء اصطناعي</div>
+            </div>
+            <div class="news-content">
+                <h3>الذكاء الاصطناعي يغير مستقبل التقنية</h3>
+                <p>تطورات جديدة في عالم الذكاء الاصطناعي وتأثيرها على الحياة اليومية.</p>
+                <a href="AI-News-fixed.html" class="read-more">قراءة المزيد</a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <div class="image-container">
+                <a href="science.html">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600" alt="العلوم">
+                </a>
+                <div class="category science">العلوم</div>
+            </div>
+            <div class="news-content">
+                <h3>أحدث الاكتشافات العلمية</h3>
+                <p>تعرف على أبرز الاكتشافات والتطورات في مختلف المجالات العلمية.</p>
+                <a href="science.html" class="read-more">قراءة المزيد</a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <div class="image-container">
+                <a href="breaking.html">
+                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600" alt="الأخبار العاجلة">
+                </a>
+                <div class="category breaking">عاجل</div>
+            </div>
+            <div class="news-content">
+                <h3>آخر الأخبار العاجلة حول العالم</h3>
+                <p>تابع أهم الأخبار العاجلة والتحديثات الجديدة فور حدوثها.</p>
+                <a href="breaking.html" class="read-more">قراءة المزيد</a>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div class="footer-box">
+            <h3>SKY WEBS NEWS</h3>
+            <a href="AI-News-fixed.html">الذكاء الاصطناعي</a>
+            <a href="world.html">العالم</a>
+            <a href="breaking.html">عاجل</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>الأقسام</h3>
+            <a href="economy.html">اقتصاد</a>
+            <a href="sports.html">رياضة</a>
+            <a href="middle-east.html">الشرق الأوسط</a>
+            <a href="Algeria-News-fixed.html">الجزائر</a>
+            <a href="science.html">العلوم</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>التواصل</h3>
+            <a href="https://www.facebook.com">Facebook</a>
+            <a href="https://www.instagram.com">Instagram</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 SKY WEBS NEWS - جميع الحقوق محفوظة
+    </div>
+
+    <p>الوقت الحالي بتوقيت GMT+1</p>
+
+    <div id="date-time"></div>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = {
+                timeZone: "Africa/Algiers",
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric"
+            };
+
+            const date = new Intl.DateTimeFormat("ar-DZ", options).format(now);
+            const time = new Intl.DateTimeFormat("ar-DZ", {
+                timeZone: "Africa/Algiers",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                hour12: false
+            }).format(now);
+
+            document.getElementById("date-time").textContent = date + " — " + time;
+        }
+
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

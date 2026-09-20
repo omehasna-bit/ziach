@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>العالم | SKY WEBS NEWS</title>
+
+<link rel="stylesheet" href="style.css">
+<style>
+     .logo img {
+    width: 220px;
+    height: 70px;
+    object-fit: contain;
+}
+</style>
+</head>
+
+
+<body class="world-section">
+
+
+
+<header>
+<div class="logo">
+    <img src="1.png" alt="">
+</div>
+
+<div class="brand">
+
+
+<h1 class="logo">
+SKY WEBS NEWS
+</h1>
+</div>
+<nav>
+
+
+<a href="index.html">
+الرئيسية
+</a>
+
+
+<a href="ai.html">
+التكنولوجيا
+</a>
+
+
+<a href="economy.html">
+اقتصاد
+</a>
+
+
+<a href="sports.html">
+رياضة
+</a>
+
+
+</nav>
+
+
+</header>
+<section class="hero">
+
+
+<div class="hero-content">
+
+
+<h1>
+
+أخبار
+<span>
+العالم
+</span>
+
+</h1>
+
+
+
+<p>
+
+متابعة آخر الأحداث العالمية
+والأخبار الدولية لحظة بلحظة.
+
+</p>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="news">
+
+
+<div class="section-title">
+
+
+<h2>
+
+آخر الأخبار
+<span>
+العالمية
+</span>
+
+</h2>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="news-grid">
+
+
+
+
+
+
+<article class="news-card">
+
+
+<img src="https://images.unsplash.com/photo-1495020689067-958852a7765e"
+alt="أخبار العالم">
+
+
+<div class="news-content">
+
+
+<h3>
+
+تطورات جديدة في الساحة الدولية
+
+</h3>
+
+
+<p>
+
+متابعة مستمرة للأحداث السياسية
+والاقتصادية حول العالم.
+
+</p>
+
+
+
+<a href="#" class="read-more">
+
+قراءة المزيد
+
+</a>
+
+
+</div>
+
+
+</article>
+<article class="news-card">
+
+
+<img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620"
+alt="السياسة العالمية">
+
+
+<div class="news-content">
+
+
+<h3>
+
+قرارات دولية تؤثر على الاقتصاد العالمي
+
+</h3>
+
+
+<p>
+
+تحليلات وتقارير حول أهم الأحداث الدولية.
+
+</p>
+
+
+
+<a href="#" class="read-more">
+
+قراءة المزيد
+
+</a>
+
+
+</div>
+
+
+</article>
+<article class="news-card">
+
+
+<img src="5.webp"
+alt="خريطة العالم">
+
+
+<div class="news-content">
+
+
+<h3>
+
+تعاون دولي في مجالات التكنولوجيا
+
+</h3>
+
+
+<p>
+
+الدول تتجه نحو مشاريع رقمية مشتركة.
+
+</p>
+
+
+
+<a href="#" class="read-more">
+
+قراءة المزيد
+
+</a>
+
+
+</div>
+
+
+</article>
+
+<article class="news-card">
+
+
+<img src="3.webp"
+alt="العالم">
+
+
+<div class="news-content">
+    <h3>بعد 9 أيام تحت الأرض.. إنقاذ عاملين من أنفاق كارثة نيبال</h3>
+<a href="#" class="read-more">
+قراءة المزيد
+
+</a>
+
+
+</div>
+
+
+</article>
+</section>
+
+<footer>
+
+
+<div class="copyright">
+
+© 2026 SKY WEBS NEWS
+
+</div>
+<p> الوقت الحالي بGMT+1</p>
+<div id="date-time"></div>
+
+<style>
+  #date-time {
+    font-size: 18px;
+    font-weight: bold;
+    direction: rtl;
+    text-align: center;
+    padding: 10px;
+    color: #1565c0;
+  }
+</style>
+
+<script>
+function updateDateTime() {
+  const now = new Date();
+
+  const options = {
+    timeZone: "Africa/Algiers",
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  };
+
+  const date = new Intl.DateTimeFormat("ar-DZ", options).format(now);
+
+  const time = new Intl.DateTimeFormat("ar-DZ", {
+    timeZone: "Africa/Algiers",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  }).format(now);
+
+  document.getElementById("date-time").textContent =
+    date + " — " + time;
+}
+
+updateDateTime();
+setInterval(updateDateTime, 1000);
+</script>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

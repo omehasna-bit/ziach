@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>البيئة في الجزائر</title>
+
+<style>
+ .logo img {
+    width: 220px;
+    height: 70px;
+    object-fit: contain;
+}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: "Cairo", sans-serif;
+}
+
+body{
+font-family: "Cairo", sans-serif;
+background:#eef8f0;
+color:#333;
+}
+
+header{
+background:linear-gradient(135deg,#1b8f4d,#49c16d);
+color:white;
+text-align:center;
+padding:60px 20px;
+}
+
+header h1{
+font-family: "Cairo", sans-serif;
+font-size:42px;
+margin-bottom:15px;
+}
+
+header p{
+font-size:20px;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:50px auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.content{
+padding:25px;
+}
+
+.content h2{
+color:#1b8f4d;
+margin-bottom:15px;
+}
+
+.content p{
+line-height:1.8;
+color:#555;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 24px;
+background:#1b8f4d;
+color:white;
+text-decoration:none;
+border-radius:8px;
+transition:.3s;
+}
+
+.btn:hover{
+background:#146c3b;
+}
+
+footer{
+margin-top:50px;
+background:#1b8f4d;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🌿 البيئة في الجزائر</h1>
+
+<p>كل ما يتعلق بحماية البيئة والموارد الطبيعية والتنمية المستدامة.</p>
+
+</header>
+
+<section class="container">
+
+<div class="card">
+
+<img src="images/forest.jpg" alt="الغابات">
+
+<div class="content">
+
+<h2>🌳 الغابات</h2>
+
+<p>تعد الغابات الجزائرية ثروة طبيعية مهمة وتساهم في حماية التنوع البيولوجي والحد من التصحر.</p>
+
+<a href="#" class="btn">اقرأ المزيد</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="images/desert.jpg" alt="التصحر">
+
+<div class="content">
+
+<h2>🏜 مكافحة التصحر</h2>
+
+<p>تنفذ الجزائر مشاريع لغرس الأشجار واستصلاح الأراضي للحد من زحف الرمال وحماية المناطق الزراعية.</p>
+
+<a href="#" class="btn">اقرأ المزيد</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="" alt="إعادة التدوير">
+
+<div class="content">
+
+<h2>♻ إعادة التدوير</h2>
+
+<p>إعادة تدوير النفايات تساعد في حماية البيئة وتقليل التلوث والمحافظة على الموارد الطبيعية.</p>
+
+<a href="#" class="btn">اقرأ المزيد</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="7.jfif" alt="المياه">
+
+<div class="content">
+
+<h2>💧 الموارد المائية</h2>
+
+<p>تعمل الجزائر على إنشاء السدود وتحلية مياه البحر وترشيد الاستهلاك لضمان الأمن المائي.</p>
+
+<a href="#" class="btn">اقرأ المزيد</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="6.jfif" alt="المناخ">
+
+<div class="content">
+
+<h2>🌍 التغيرات المناخية</h2>
+
+<p>تشكل التغيرات المناخية تحديًا عالميًا، وتشارك الجزائر في مبادرات تهدف إلى الحد من آثارها.</p>
+
+<a href="#" class="btn">اقرأ المزيد</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="5.jfif" alt="الحدائق الوطنية">
+
+<div class="content">
+
+<h2>🦌 الحدائق الوطنية</h2>
+
+<p>تضم الجزائر العديد من الحدائق الوطنية التي تحافظ على الحيوانات والنباتات النادرة.</p>
+
+<a href="#" class="btn">اقرأ المزيد</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+جميع الحقوق محفوظة © أخبار الجزائر
+
+<p> الوقت الحالي بGMT+1</p>
+<div id="date-time"></div>
+
+<style>
+  #date-time {
+    font-size: 18px;
+    font-weight: bold;
+    direction: rtl;
+    text-align: center;
+    padding: 10px;
+    color: #1565c0;
+  }
+</style>
+
+<script>
+function updateDateTime() {
+  const now = new Date();
+
+  const options = {
+    timeZone: "Africa/Algiers",
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  };
+
+  const date = new Intl.DateTimeFormat("ar-DZ", options).format(now);
+
+  const time = new Intl.DateTimeFormat("ar-DZ", {
+    timeZone: "Africa/Algiers",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  }).format(now);
+
+  document.getElementById("date-time").textContent =
+    date + " — " + time;
+}
+
+updateDateTime();
+setInterval(updateDateTime, 1000);
+</script>
+</footer>
+
+</body>
+</html>
